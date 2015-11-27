@@ -1,5 +1,5 @@
 {
-  "name": "formsy-react",
+  "name": "formsy-react-fork",
   "version": "0.17.0",
   "description": "A form input builder and validator for React JS",
   "repository": {
@@ -24,6 +24,7 @@
     "react-component"
   ],
   "dependencies": {
+    "babelify": "^7.2.0",
     "form-data-to-object": "^0.1.0"
   },
   "devDependencies": {
