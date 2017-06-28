@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
+import createClass from 'create-react-class';
 
 import Formsy from './..';
 import TestInput from './utils/TestInput';
@@ -32,7 +33,7 @@ export default {
     'should allow for null/undefined children': function (test) {
 
       let model = null;
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         render() {
           return (
             <Formsy.Form onSubmit={(formModel) => (model = formModel)}>
@@ -59,7 +60,7 @@ export default {
       const inputs = [];
       let forceUpdate = null;
       let model = null;
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         componentWillMount() {
           forceUpdate = this.forceUpdate.bind(this);
         },
@@ -95,7 +96,7 @@ export default {
       const inputs = [];
       let forceUpdate = null;
       let model = null;
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         componentWillMount() {
           forceUpdate = this.forceUpdate.bind(this);
         },
@@ -133,7 +134,7 @@ export default {
       let forceUpdate = null;
       let model = null;
 
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         componentWillMount() {
           forceUpdate = this.forceUpdate.bind(this);
         },
@@ -339,7 +340,7 @@ export default {
 
 
     const hasChanged = sinon.spy();
-    const TestForm = React.createClass({
+    const TestForm = createClass({
       render() {
         return <Formsy.Form onChange={hasChanged}></Formsy.Form>;
       }
@@ -367,7 +368,7 @@ export default {
   'should trigger onChange when new input is added to form': function (test) {
 
     const hasChanged = sinon.spy();
-    const TestForm = React.createClass({
+    const TestForm = createClass({
       getInitialState() {
         return {
           showInput: false
@@ -404,7 +405,7 @@ export default {
 
     'should allow elements to check if the form is disabled': function (test) {
 
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         getInitialState() { return { disabled: true }; },
         enableForm() { this.setState({ disabled: false }); },
         render() {
@@ -429,7 +430,7 @@ export default {
 
     'should be possible to pass error state of elements by changing an errors attribute': function (test) {
 
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         getInitialState() { return { validationErrors: { foo: 'bar' } }; },
         onChange(values) {
             this.setState(values.foo ? { validationErrors: {} } : { validationErrors: {foo: 'bar'} });
@@ -461,7 +462,7 @@ export default {
     'should trigger an onValidSubmit when submitting a valid form': function (test) {
 
       let isCalled = sinon.spy();
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         render() {
           return (
             <Formsy.Form onValidSubmit={isCalled}>
@@ -480,7 +481,7 @@ export default {
     'should trigger an onInvalidSubmit when submitting an invalid form': function (test) {
 
       let isCalled = sinon.spy();
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         render() {
           return (
             <Formsy.Form onInvalidSubmit={isCalled}>
@@ -505,7 +506,7 @@ export default {
     'should call onSubmit correctly': function (test) {
 
       const onSubmit = sinon.spy();
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         render() {
           return (
             <Formsy.Form onSubmit={onSubmit}>
@@ -526,7 +527,7 @@ export default {
     'should allow dynamic changes to false': function (test) {
 
       const onSubmit = sinon.spy();
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         getInitialState() {
           return {
             value: true
@@ -557,7 +558,7 @@ export default {
 
     'should say the form is submitted': function (test) {
 
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         render() {
           return (
             <Formsy.Form>
@@ -578,7 +579,7 @@ export default {
 
     'should be able to reset the form to its pristine state': function (test) {
 
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         getInitialState() {
           return {
             value: true
@@ -613,7 +614,7 @@ export default {
 
     'should be able to reset the form using custom data': function (test) {
 
-      const TestForm = React.createClass({
+      const TestForm = createClass({
         getInitialState() {
           return {
             value: true

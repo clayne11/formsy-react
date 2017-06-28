@@ -51,7 +51,7 @@ Complete API reference is available [here](/API.md).
 ```javascript
   /** @jsx React.DOM */
   var Formsy = require('formsy-react');
-  var MyAppForm = React.createClass({
+  var MyAppForm = createClass({
     getInitialState: function () {
       return {
         canSubmit: false
@@ -87,7 +87,7 @@ This code results in a form with a submit button that will run the `submit` meth
 ```javascript
   /** @jsx React.DOM */
   var Formsy = require('formsy-react');
-  var MyOwnInput = React.createClass({
+  var MyOwnInput = createClass({
 
     // Add the Formsy Mixin
     mixins: [Formsy.Mixin],

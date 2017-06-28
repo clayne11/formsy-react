@@ -1,4 +1,5 @@
 import React from 'react';
+import createClass from 'create-react-class';
 import Formsy from './../..';
 import assign from 'react/lib/Object.assign';
 
@@ -16,7 +17,7 @@ const defaultProps = {
 };
 
 export function InputFactory(props) {
-  return React.createClass(assign(defaultProps, props));
+  return createClass(assign(defaultProps, props));
 }
 
-export default React.createClass(defaultProps);
+export default createClass(defaultProps);

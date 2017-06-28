@@ -1,5 +1,5 @@
 {
-  "name": "formsy-react-fork",
+  "name": "@clayne/formsy-react-fork",
   "version": "0.17.1",
   "description": "A form input builder and validator for React JS",
   "repository": {
@@ -25,7 +25,9 @@
   ],
   "dependencies": {
     "babelify": "^7.2.0",
-    "form-data-to-object": "^0.1.0"
+    "create-react-class": "^15.6.0",
+    "form-data-to-object": "^0.1.0",
+    "prop-types": "^15.5.10"
   },
   "devDependencies": {
     "babel": "^5.6.4",
@@ -43,6 +45,6 @@
     "webpack-dev-server": "^1.7.0"
   },
   "peerDependencies": {
-    "react": "^0.14.0"
+    "react": "^0.14.0 | ^16.x.x"
   }
 }

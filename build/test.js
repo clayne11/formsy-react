@@ -1,8 +1,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var createClass = require('create-react-class');
 var Formsy = require('./../src/main.js');
 
-var Input = React.createClass({
+var Input = createClass({
   onChange: function (event) {
     this.props.setValue(event.currentTarget.value);
   },
@@ -18,7 +19,7 @@ var Input = React.createClass({
 
 Input = Formsy.HOC(Input);
 
-var SomeComp = React.createClass({
+var SomeComp = createClass({
   getInitialState: function () {
     return  {
       isRequired: false
@@ -39,7 +40,7 @@ var SomeComp = React.createClass({
   }
 });
 
-var FormApp = React.createClass({
+var FormApp = createClass({
   onSubmit: function (model) {
     console.log('model', model);
   },
